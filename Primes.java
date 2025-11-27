@@ -1,7 +1,8 @@
 public class Primes {
     public static void main(String[] args) {
         // Replace this statement with your code
-        boolean[] num = new boolean[31];
+        int q = Integer.parseInt(args());
+        boolean[] num = new boolean[q + 1];
         
         System.out.println("Prime numbers up to " + (num.length -1) +  ":");
 
@@ -19,12 +20,11 @@ public class Primes {
         int a = 0;
         for(int u = 2; u < num.length; u++){
                 if (num[u] == true){
-                   System.out.println(u + " "); 
+                   System.out.println(u); 
                    a++;
                 }
             }
             int c = (a * 100) / (num.length - 1);
-            System.out.println(c);
             System.out.println("There are " + a + " primes between 2 and " + (num.length - 1) + " ("  + c + "% are primes)");
 
     }
