@@ -22,5 +22,56 @@ public class KeywordsDetector {
     // If a sentence contains one or more of the kewords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         // Replace this comment with your code
+        // "Our product will transform the market",
+       for (int i = 0; i < sentences.length; i++){
+            String newSentences = sentences[i];
+            String sentenceLow = lowerCase(newSentences);
+                for ( int o = 0; o < keywords.length; o++){
+                    String newKeywords = keywords[o];
+                    String keywordsLow = lowerCase(newKeywords);
+                    if (contains(sentenceLow, keywordsLow) == true){
+                        System.out.println(newSentences);
+                    }
+                   }
+                }
+            }
+    
+    public static String lowerCase(String str) {
+        String res = "";
+        for ( int i = 0; i < str.length(); i++){
+            if ( (int)str.charAt(i) >= 65 && (int)str.charAt(i) <= 90 ){
+                int a = str.charAt(i) + 32;
+                char b = (char)a;
+                res = res + b;
+            }else{
+            res = res + str.charAt(i);
+            }
+        }
+        // Replace the following statement with your code
+        return res;
+    }
+
+    public static boolean contains(String str1, String str2) {
+        // Replace the following statement with your code
+        // System.out.println(contains("resignation", "sign"))
+        if (str1.length() < str2.length()){
+            return false;
+        }
+        for (int i = 0 ; i < (str1.length() - str2.length()); i++){
+            boolean match = true;
+            for ( int u = 0; u < str2.length(); u++){
+                char b = str2.charAt(u);
+                if( str1.charAt(i + u) != b){
+                    match = false;
+                    break;
+                }
+            }
+            if ( match == true){
+                return true;
+            }
+        }
+        return false;
     }
 }
+
+ 
